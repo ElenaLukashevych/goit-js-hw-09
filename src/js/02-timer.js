@@ -32,11 +32,13 @@ startBtn.disabled = true;
 startBtn.addEventListener('click', onStartBtn);
 
 function onStartBtn() {
+  
+  startBtn.disabled = true;
+
 
 timerId = setInterval(() => {
   deadline = new Date(myInput.value); 
   const finishTime = convertMs(Number(deadline) - Number(new Date()));
-  startBtn.disabled = true;
         myInput.disabled = true;
   if (finishTime.seconds < 0) {
     clearInterval(timerId);

@@ -53,13 +53,14 @@ function onFailure({ position, delay }) {
 function onFormsubmit(evt) {
   evt.preventDefault();
 
-  let delayValue = evt.currentTarget.elements.delay.value;
+  const delay = evt.currentTarget.elements.delay;
   const amountValue = evt.currentTarget.elements.amount.value;
-  const stepValue = evt.currentTarget.elements.step.value;
+  const step = evt.currentTarget.elements.step;
+  
+  let stepValue = Number(step.value);
 
-  // let delayValue = formEl.elements.delay.value;
-  // const amountValue = formEl.elements.amount.value;
-  // const stepValue = formEl.elements.step.value;
+  let delayValue = Number(delay.value);
+
   
 
   for (let i = 1; i <= Number(amountValue); i += 1) {
